@@ -1,5 +1,5 @@
 #include "../Headers/ShiftAnd.h"
-void ShiftAndAproximado(TipoTexto T, long n, TipoPadrao P, long m, long k){
+void ShiftAndAproximado(TipoTexto T, long n, TipoPadrao P, long m, long k,int Operacoes[]){
   long Masc[ MAXCHAR ] , i , j , Ri , Rant, Rnovo;
   long R[ NUMMAXERROS + 1];
   for ( i = 0; i < MAXCHAR ; i ++){
@@ -17,8 +17,8 @@ void ShiftAndAproximado(TipoTexto T, long n, TipoPadrao P, long m, long k){
     Rant = R[0];
     Rnovo = ((((unsigned long)Rant) >> 1) | Ri) & Masc[T[ i ] + 127];
     R[0] = Rnovo;
-    for ( j = 1; j <= k ; j ++){
-      Rnovo = ((((unsigned long)R[j]) >> 1) & Masc[T[ i ] + 127]) | Rant | (((unsigned long) (Rant | Rnovo)) >> 1);
+    for ( j = 1; j <= k ; j ++){                                  //rant->insere rant->substitui rnovo->deleta
+      Rnovo = ((((unsigned long)R[j]) >> 1) & Masc[T[ i ] + 127]) | (Rant*Operacoes[0]) | (((unsigned long) ((Rant*Operacoes[2])) | (Rnovo*Operacoes[1])) >> 1);
       Rant = R[j];
       R[j] = Rnovo | Ri ;
     }

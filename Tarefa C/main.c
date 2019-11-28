@@ -19,7 +19,6 @@ int main(int argc, char const *argv[]) {
   char* Txt = LeituraArq(Entrada);
   printf("Entre com o padrao: ");
   scanf("%s",Padrao);
-  int P = strlen(Padrao);
   int Operacoes[3];
   int p = strlen(Padrao);
   printf("Entre com o tamanho de k: ");
@@ -54,6 +53,6 @@ int main(int argc, char const *argv[]) {
     }
   }while(Operacoes[2]!=1 && Operacoes[2]!=0);
 
-  ShiftAndAproximado(Txt,strlen(Txt),Padrao,p,k);
+  ShiftAndAproximado(Txt,strlen(Txt),Padrao,p,k,Operacoes);
   return 0;
 }

@@ -9,5 +9,5 @@
 #include "string.h"
 typedef char TipoTexto [MAXTAMTEXTO];
 typedef char TipoPadrao[MAXTAMPADRAO];
-void ShiftAndAproximado(TipoTexto T, long n, TipoPadrao P, long m, long k);
+void ShiftAndAproximado(TipoTexto T, long n, TipoPadrao P, long m, long k,int Operacoes[]);
 #endif

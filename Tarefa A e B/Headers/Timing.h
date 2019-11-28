@@ -11,3 +11,5 @@ void IniciarTimer(Timer *timer);
 void PararTimer(Timer *timer);
 double TempoTotal(Timer timer);
 #endif
+
+//Funcoes e estruturas para exibicao do tempo de execucao

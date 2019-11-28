@@ -1,5 +1,5 @@
 #include "../Headers/BMH.h"
-void BMH(TipoTexto T, long n, TipoPadrao P, long m){
+void BMH(TipoTexto T, long n, TipoPadrao P, long m){ //Algoritmo BMH 
   long i , j , k , d[MAXCHAR + 1];
   for(j=0;j<=MAXCHAR;j++){
     d[j] = m;
